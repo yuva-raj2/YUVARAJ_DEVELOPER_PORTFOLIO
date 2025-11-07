@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Quicksand', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #fafafa;
+}
+
+.app {
+  width: 100%;
+  overflow-x: hidden;
+}
