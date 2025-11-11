@@ -8,13 +8,13 @@ function Header() {
         <h1>Develop<span>er</span></h1>
       </div>
       <nav className="header-right">
-        {['home', 'about', 'projects', 'contact', 'skills'].map((section) => (
+        {['Home', 'About', 'Projects', 'Skills','Experience','Contact'].map((section) => (
           <Link 
-            key={section}
+            key={section} title={section.toUpperCase()}
             to={section}
             smooth={true}
             duration={500}
-            offset={-70}
+            offset={-70} 
           >
             <h2>{section.charAt(0).toUpperCase() + section.slice(1)}</h2>
           </Link>

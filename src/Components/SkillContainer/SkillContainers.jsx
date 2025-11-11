@@ -8,8 +8,10 @@ import ReactImage from "../../assets/Skills-Image.png";
 
 function SkillContainers() {
   const skills = [
+    {name : "HTML", value:90, color:"#62948F"},
+    {name : "CSS",value:90, color:"#17D534"},
     { name: "React", value: 85, color: "#61DBFB" },
-    { name: "Java", value: 90, color: "#E76F00" },
+    { name: "Java", value: 70, color: "#E76F00" },
     { name: "Node.js", value: 80, color: "#3C873A" },
     { name: "JavaScript", value: 85, color: "#F7DF1E" },
     { name: "SQL", value: 75, color: "#00618A" },
