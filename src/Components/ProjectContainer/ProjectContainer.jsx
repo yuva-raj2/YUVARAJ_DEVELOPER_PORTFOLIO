@@ -25,7 +25,7 @@ function ProjectContainer() {
   ];
 
   return (
-    <Element name="projects" id="projects">
+    <Element name="Projects" id="projects">
       <div className="project-container">
         <h1 className="project-title">Projects</h1>
         <div className="projects-grid">

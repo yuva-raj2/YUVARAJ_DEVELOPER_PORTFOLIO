@@ -35,7 +35,7 @@ function SkillContainers() {
   }, [inView]);
 
   return (
-    <Element name="skills" id="skills">
+    <Element name="Skills" id="skills">
       <div className="skills-container" ref={ref}>
         <div className="skills-left">
           <img src={ReactImage} alt="Skills" />

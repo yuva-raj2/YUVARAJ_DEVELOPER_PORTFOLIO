@@ -6,7 +6,7 @@ import ProjectContainer from '../ProjectContainer/ProjectContainer';
 
 function TopContainer() {
   return (
-    <Element name="home" className="top-container-element">
+    <Element name="Home" className="top-container-element">
       <TopContent />
       <SkillContainers />
       <ProjectContainer/>
