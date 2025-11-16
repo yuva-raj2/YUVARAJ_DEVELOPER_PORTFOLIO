@@ -1,86 +1,127 @@
-.top-container {
+.hero-section {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  height: 90vh;
-  background: url('../../assets/Yuvaraj-Profile.png') no-repeat center/cover;
-  position: relative;
-}
-
-.top-container-text {
-  position: relative;
-  padding-right: 5%;
-  text-align: right;
-}
-
-.top-container-text h1 {
-  font-size: 2.5rem;
-  color: #fff;
-}
-
-.top-container-text h1 span {
-  color: #56d6c7;
-}
-
-.top-container-text h2 {
-  font-size: 1.4rem;
-  color: #dcdcdc;
-  margin-top: 0.5rem;
-}
-
-.top-container-nav {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-}
-
-.top-container-nav button {
-  border: none;
-  border-radius: 25px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.cv-btn {
-  background-color: #ff4081;
+  justify-content: center;
+  gap: 4rem;
+  padding: 4rem 2rem;
+  min-height: 90vh;
+  background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
   color: white;
 }
 
-.cv-btn:hover {
-  background-color: #f50057;
+/* LEFT PHOTO CARD */
+.photo-card {
+  width: 320px;
+  height: 420px;
+  border-radius: 26px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+  position: sticky;
+  top: 100px; /* FIXED CARD EFFECT */
 }
 
-.work-btn {
-  background-color: transparent;
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RIGHT CONTENT */
+.hero-right {
+  max-width: 550px;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-right h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-right h1 span {
+  color: #38f5d0;
+  text-shadow: 0 0 10px rgba(56,245,208,0.7);
+}
+
+.hero-right h2 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  color: #dcdcdc;
+}
+
+.hero-right p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #bfbfbf;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.primary-btn {
+  background: #00e1ff;
+  color: #000;
+}
+
+.primary-btn:hover {
+  background: #00bcd4;
+}
+
+.secondary-btn {
+  background: transparent;
   border: 2px solid white;
   color: white;
 }
 
-.work-btn:hover {
-  background-color: white;
-  color: #333;
+.secondary-btn:hover {
+  background: white;
+  color: #111;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .top-container {
-    justify-content: center;
+  .hero-section {
+    flex-direction: column;
     text-align: center;
-    padding: 1rem;
   }
 
-  .top-container-text h1 {
-    font-size: 2rem;
+  .photo-card {
+    width: 260px;
+    height: 340px;
+    position: static;
   }
 
-  .top-container-text h2 {
-    font-size: 1rem;
+  .hero-right h1 {
+    font-size: 2.3rem;
   }
 
-  .top-container-nav {
+  .hero-right h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
     justify-content: center;
   }
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }

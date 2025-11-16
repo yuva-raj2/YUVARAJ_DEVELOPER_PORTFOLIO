@@ -1,0 +1,58 @@
+/* Fade-up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-container {
+  animation: fadeUp 0.9s ease forwards;
+  background: #0d0d0d;
+  padding: 50px 20px;
+  color: white;
+  border-top: 1px solid #333;
+}
+
+.footer-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-link {
+  color: #b5b5b5;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #1976d2;
+}
+
+.footer-social-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social-link {
+  color: #cccccc;
+  transition: 0.3s ease;
+}
+
+.footer-social-link:hover {
+  color: #1976d2;
+}
+
+/* Bottom text */
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  color: #777;
+  font-size: 14px;
+}
