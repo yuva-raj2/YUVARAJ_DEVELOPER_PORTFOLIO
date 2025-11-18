@@ -1,5 +1,4 @@
 import React from "react";
-import "./experience.css";
 import { Card, CardContent, Typography } from "@mui/material";
 import { Element } from "react-scroll";
 const Experience = () => {
