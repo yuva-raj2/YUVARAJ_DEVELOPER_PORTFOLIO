@@ -8,13 +8,11 @@ function TopContent() {
     <section className="hero-section">
 
       <div className="hero-left">
-        <div className="photo-card">
-          <img src={Profile} alt="Yuvi" className="profile-img" />
-        </div>
+    
       </div>
 
       <div className="hero-right">
-        <h1>Hello, I'm <span>Yuvi</span></h1>
+        <h1>Hello, I'm <span>Yuvaraj</span></h1>
         <h2>A Passionate Software Developer 💻</h2>
         <p>
           I build scalable full-stack applications, modern user interfaces, and
