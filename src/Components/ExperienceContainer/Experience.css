@@ -1,11 +1,142 @@
-.exp-card {
-  animation: fadeUp 0.8s ease forwards;
-  transition: all 0.3s ease;
-  border-radius: 14px !important;
+/* =========================
+   EXPERIENCE SECTION
+========================= */
+.exp-section {
+  padding: 80px 20px;
+  background: transparent;
 }
 
-.exp-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.35);
-  border: 1px solid #1976d2;
+.exp-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  margin-bottom: 60px;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+.timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #38f5d0,
+    rgba(56, 245, 208, 0.1)
+  );
+}
+
+/* =========================
+   TIMELINE ITEM
+========================= */
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* DOT */
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  background: #38f5d0;
+  border-radius: 50%;
+  position: absolute;
+  left: 1px;
+  top: 22px;
+  box-shadow: 0 0 12px rgba(56, 245, 208, 0.8);
+}
+
+/* =========================
+   CARD (GLASS)
+========================= */
+.timeline-card {
+  margin-left: 40px;
+  padding: 22px 24px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 26px rgba(56, 245, 208, 0.35);
+}
+
+/* =========================
+   TEXT
+========================= */
+.timeline-card h2 {
+  color: #f9fafb;
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.timeline-card h3 {
+  color: #38f5d0;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.duration {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   LIST
+========================= */
+.timeline-card ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.timeline-card li {
+  font-size: 0.92rem;
+  color: #e5e7eb;
+  margin-bottom: 6px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.timeline-card li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #38f5d0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline-card {
+    margin-left: 30px;
+  }
+
+  .exp-title {
+    font-size: 2.2rem;
+  }
 }

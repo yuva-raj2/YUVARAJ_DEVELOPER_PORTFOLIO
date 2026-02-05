@@ -1,61 +1,88 @@
-import { useState } from "react";
 import "./Services.css";
-import { Element } from "react-scroll";
+import { motion } from "framer-motion";
 
-const Services = () => {
+function Services() {
   const services = [
     {
-      img: "https://cdn-icons-png.flaticon.com/512/906/906334.png",
-      title: "Full Stack Web Development",
-      desc: "Building scalable full-stack applications using Java, Spring Boot, React, SQL/NoSQL.",
+      title: "Full Stack Web Application",
+      price: "₹15,000 – ₹40,000",
+      desc: "End-to-end custom web applications using React & Spring Boot.",
+      points: [
+        "Responsive UI",
+        "REST APIs",
+        "Database Integration",
+        "Admin Dashboards",
+      ],
     },
     {
-      img: "https://cdn-icons-png.flaticon.com/512/235/235861.png",
-      title: "API Development",
-      desc: "Creating secure REST APIs and integrating third-party services.",
+      title: "Portfolio / Business Website",
+      price: "₹5,000 – ₹12,000",
+      desc: "Modern portfolio or business landing websites with clean UI.",
+      points: [
+        "Fast & Lightweight",
+        "SEO Optimized",
+        "Smooth Animations",
+        "Mobile Friendly",
+      ],
     },
     {
-      img: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
-      title: "UI/UX Design",
-      desc: "Designing clean, responsive, user-friendly interfaces.",
-    },
-    {
-      img: "https://cdn-icons-png.flaticon.com/512/3501/3501248.png",
-      title: "Bug Fixing",
-      desc: "Debugging, refactoring, and optimizing existing applications.",
-    },
-    {
-      img: "https://cdn-icons-png.flaticon.com/512/8145/8145884.png",
-      title: "Database Management",
-      desc: "Schema design, indexing, query optimization for MySQL, PostgreSQL, MongoDB.",
-    },
-    {
-      img: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-      title: "Mentorship",
-      desc: "Training students in Java, MERN, DSA and real-world projects.",
+      title: "Automation Tools",
+      price: "₹3,000 – ₹10,000",
+      desc: "Automation solutions using Excel, VBA & APIs.",
+      points: [
+        "Excel Automation",
+        "Custom Scripts",
+        "WhatsApp API",
+        "Workflow Optimization",
+      ],
     },
   ];
 
   return (
-    <Element name="Services" id="services">
-      <div className="services-container">
-        <h1 className="services-title">Services</h1>
+    <section id="Services" className="services-section">
+      <motion.h1
+        className="services-title"
+        initial={{ y: 40, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        Services
+      </motion.h1>
+      <p style={{ color: "#94a3b8", marginBottom: "40px" }}>
+        Professional services by Yuvitra Labs
+      </p>
 
-        <div className="services-grid">
-          {services.map((service, i) => (
-            <div key={i} className="service-card">
-              <img src={service.img} alt={service.title} className="service-image" />
+      <div className="services-grid">
+        {services.map((s, i) => (
+          <motion.div
+            key={i}
+            className="service-card"
+            whileHover={{ scale: 1.06 }}
+            transition={{ type: "spring", stiffness: 160 }}
+          >
+            <h2>{s.title}</h2>
+            <h3 className="service-price">{s.price}</h3>
+            <p className="service-desc">{s.desc}</p>
 
-              <div className="service-overlay">
-                <h2>{service.title}</h2>
-                <p>{service.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+            <ul className="service-points">
+              {s.points.map((p, idx) => (
+                <li key={idx}>{p}</li>
+              ))}
+            </ul>
+
+            <motion.button
+              className="hire-btn"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Hire Me
+            </motion.button>
+          </motion.div>
+        ))}
       </div>
-    </Element>
+    </section>
   );
-};
+}
 
 export default Services;

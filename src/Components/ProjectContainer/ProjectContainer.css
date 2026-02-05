@@ -1,19 +1,18 @@
 .project-container {
-  padding: 60px 20px;
-  background: #f9f9ff;
+  padding: 80px 20px;
   text-align: center;
+  background: transparent;
 }
 
 .project-title {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #333;
-  font-weight: 600;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  color: #e5e7eb;
+  font-weight: 700;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 32px;
 }

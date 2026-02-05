@@ -4,13 +4,46 @@
   box-sizing: border-box;
 }
 
-body, html {
+html, body {
   font-family: 'Quicksand', sans-serif;
   scroll-behavior: smooth;
-  background-color: #fafafa;
+
+  /* 🔥 Global Dark Gradient Background */
+  background: radial-gradient(circle at top left, #1f2933, #020617 45%, #050816);
+  color: #ffffff;
+
+  width: 100%;
+  min-height: 100%;
 }
 
 .app {
   width: 100%;
   overflow-x: hidden;
+
+  /* Makes all sections flow smoothly */
+  background: transparent;
+}
+
+/* 🔥 Make all sections transparent */
+section {
+  background: transparent !important;
+  padding: 60px 0;
+}
+
+/* 🔥 Fix headings color */
+h1, h2, h3 {
+  color: #f8fafc !important;
+}
+
+/* 🔥 Fix paragraph / small text color */
+p, li, label, span {
+  color: #d1d5db !important;
+}
+section, 
+.skills-container,
+.projects-section,
+.services-section,
+.exp-section,
+.contact-section {
+  background: transparent !important;
 }

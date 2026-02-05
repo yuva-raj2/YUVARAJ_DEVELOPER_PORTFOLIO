@@ -1,0 +1,24 @@
+.neon-cursor {
+  position: fixed;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #38f5d0 0%, #22d3ee 60%, transparent 100%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 10px #38f5d0) drop-shadow(0 0 20px #22d3ee);
+  transition: transform 0.05s linear;
+  z-index: 9999;
+}
+
+/* Make buttons magnetic */
+button, .btn, .primary-btn, .secondary-btn, .hire-btn, .view-btn {
+  position: relative;
+  z-index: 10;
+}
+
+/* Add this class to any element for magnetic effect */
+.magnetic {
+  display: inline-block;
+  transition: 0.2s ease;
+}

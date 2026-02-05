@@ -1,26 +1,37 @@
-import { useState } from "react";
+import React from "react";
 import "./Projects.css";
+import { motion } from "framer-motion";
 
-const Projects = ({ link, img, desc, title }) => {
-  const [show, setShow] = useState(false);
-
+function Projects({ title, desc, img, link, tech }) {
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">
-      <div
-        className="project-card"
-        onMouseEnter={() => setShow(true)}
-        onMouseLeave={() => setShow(false)}
-      >
-        <img src={img} alt={title} className="project-image" />
-
-        {/* Overlay appears on hover */}
-        <div className={`project-overlay ${show ? "visible" : ""}`}>
-          <h2>{title}</h2>
-          <p>{desc}</p>
-        </div>
+    <motion.div
+      className="project-card"
+      whileHover={{ scale: 1.07 }}
+      whileTap={{ scale: 0.96 }}
+      transition={{ type: "spring", stiffness: 140 }}
+    >
+      <div className="project-img">
+        <img src={img} alt={title} />
       </div>
-    </a>
+
+      <div className="project-content">
+        <h2>{title}</h2>
+        <p>{desc}</p>
+
+        <div className="tech-badges">
+          {tech?.map((t, i) => (
+            <span key={i} className="badge">{t}</span>
+          ))}
+        </div>
+
+        {link !== "#" && (
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <button className="view-btn">View Project</button>
+          </a>
+        )}
+      </div>
+    </motion.div>
   );
-};
+}
 
 export default Projects;
