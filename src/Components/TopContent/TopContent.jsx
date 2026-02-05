@@ -5,6 +5,16 @@ import * as THREE from "three";
 function TopContent() {
   const canvasRef = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const socialStyle = {
+    padding: "10px 18px",
+    fontSize: "0.9rem",
+    borderRadius: "999px",
+    border: "1px solid rgba(56,245,208,0.5)",
+    color: "#38f5d0",
+    background: "rgba(56,245,208,0.08)",
+    fontWeight: 600,
+    textDecoration: "none"
+  };
 
   const Resume = ""; // add resume later
 
@@ -223,6 +233,36 @@ function TopContent() {
               {tech}
             </span>
           ))}
+        </div>
+        {/* Social Links */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "1.2rem",
+            marginBottom: "2.2rem",
+            flexWrap: "wrap"
+          }}
+        >
+          <a
+            href="https://www.linkedin.com/in/yuvaraj-r-497908214/"
+            target="_blank"
+            rel="noreferrer"
+            className="magnetic"
+            style={socialStyle}
+          >
+            🔗 LinkedIn
+          </a>
+
+          <a
+            href="https://github.com/yuva-raj2"
+            target="_blank"
+            rel="noreferrer"
+            className="magnetic"
+            style={socialStyle}
+          >
+            💻 GitHub
+          </a>
         </div>
 
         {/* CTA BUTTONS */}
