@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import * as THREE from "three";
+import { Helmet } from "react-helmet-async";
 
 function TopContent() {
   const canvasRef = useRef(null);
@@ -111,6 +112,11 @@ function TopContent() {
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>Yuvaraj - Java Full Stack Engineer | Founder @ YUVITRA Labs</title> 
+      <meta name="description" content="Yuvaraj is a Java Full Stack Developer and founder of Yuvitra Labs, building scalable web applications for startups and businesses." />
+    </Helmet>
     <section
       id="Home"
       style={{
@@ -317,6 +323,7 @@ function TopContent() {
         </div>
       </motion.div>
     </section>
+    </>
   );
 }
 
