@@ -1,24 +1,104 @@
+/* ========== 🔥 NEON CURSOR FALLBACK (CSS) ========== */
 .neon-cursor {
   position: fixed;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
+
   background: radial-gradient(circle, #38f5d0 0%, #22d3ee 60%, transparent 100%);
+
   pointer-events: none;
-  transform: translate(-50%, -50%);
-  filter: drop-shadow(0 0 10px #38f5d0) drop-shadow(0 0 20px #22d3ee);
-  transition: transform 0.05s linear;
+  transform: translate(-50%, -50%) scale(1);
+
+  filter:
+    drop-shadow(0 0 8px #38f5d0)
+    drop-shadow(0 0 16px #22d3ee);
+
+  transition:
+    transform 0.08s ease-out,
+    opacity 0.2s ease;
+
   z-index: 9999;
+  mix-blend-mode: screen;
+
+  will-change: transform;
 }
 
-/* Make buttons magnetic */
-button, .btn, .primary-btn, .secondary-btn, .hire-btn, .view-btn {
-  position: relative;
-  z-index: 10;
+/* 🔥 Cursor hover state */
+.neon-cursor--active {
+  transform: translate(-50%, -50%) scale(1.6);
+  filter:
+    drop-shadow(0 0 14px #38f5d0)
+    drop-shadow(0 0 28px #22d3ee);
 }
 
-/* Add this class to any element for magnetic effect */
+/* 🔥 Cursor click state */
+.neon-cursor--click {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* ========== 🔥 MAGNETIC ELEMENT BASE ========== */
 .magnetic {
   display: inline-block;
-  transition: 0.2s ease;
+  position: relative;
+
+  transition:
+    transform 0.25s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.25s ease;
+
+  will-change: transform;
+}
+
+/* 🔥 Hover glow effect */
+.magnetic:hover {
+  box-shadow: 0 8px 25px rgba(56, 245, 208, 0.25);
+}
+
+/* 🔥 Active press feel */
+.magnetic:active {
+  transform: scale(0.95);
+}
+
+/* ========== 🔥 BUTTON IMPROVEMENTS ========== */
+button,
+.btn,
+.primary-btn,
+.secondary-btn,
+.hire-btn,
+.view-btn {
+  position: relative;
+  z-index: 10;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Hover lift */
+button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Click press */
+button:active,
+.btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* ========== 🔥 INTERACTIVE CURSOR TARGETS ========== */
+button:hover ~ .neon-cursor,
+a:hover ~ .neon-cursor {
+  transform: translate(-50%, -50%) scale(1.4);
+}
+
+/* ========== 🔥 PERFORMANCE SAFE (REDUCE MOTION) ========== */
+@media (prefers-reduced-motion: reduce) {
+  .neon-cursor {
+    display: none;
+  }
+
+  .magnetic {
+    transition: none;
+  }
 }

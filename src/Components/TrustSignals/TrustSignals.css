@@ -1,0 +1,256 @@
+/* ===== CSS Variables for Theming ===== */
+:root {
+  --trust-primary: #7c3aed;
+  --trust-secondary: #38f5d0;
+  --trust-bg: rgba(15, 23, 42, 0.6);
+  --trust-border: rgba(124, 58, 237, 0.2);
+  --trust-text: #e2e8f0;
+  --trust-text-muted: #94a3b8;
+  --trust-radius: 16px;
+  --trust-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  --trust-transition: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ===== Section Layout ===== */
+.trust-section {
+  padding: 40px 20px;
+  background: transparent;
+  position: relative;
+}
+
+.trust-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ===== Header Styles ===== */
+.trust-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.trust-title {
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  font-weight: 700;
+  color: var(--trust-text);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.trust-subtitle {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: var(--trust-text-muted);
+  margin: 0;
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+/* ===== Grid Layout ===== */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== Trust Item Card ===== */
+.trust-item {
+  position: relative;
+  padding: 20px 16px;
+  border-radius: var(--trust-radius);
+  border: 1px solid var(--trust-border);
+  background: var(--trust-bg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: default;
+  transition: 
+    border-color 0.25s var(--trust-transition),
+    background 0.25s var(--trust-transition);
+  overflow: hidden;
+  will-change: transform;
+}
+
+.trust-item--interactive {
+  cursor: pointer;
+}
+
+.trust-item:focus-visible {
+  outline: 2px solid var(--trust-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.2);
+}
+
+/* Remove focus outline for mouse users */
+.trust-item:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ===== Icon Styles ===== */
+.trust-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--trust-primary);
+}
+
+.trust-icon-emoji {
+  display: inline-block;
+  animation: subtleFloat 3s ease-in-out infinite;
+}
+
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* SVG icon sizing */
+.trust-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--trust-primary);
+}
+
+/* ===== Content Styles ===== */
+.trust-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0; /* Prevent overflow */
+}
+
+.trust-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--trust-text);
+  line-height: 1.3;
+}
+
+.trust-description {
+  font-size: 0.85rem;
+  color: var(--trust-text-muted);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== Glow Effect (Hover) ===== */
+.trust-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.trust-item:hover .trust-glow,
+.trust-item:focus-visible .trust-glow {
+  opacity: 1;
+}
+
+/* ===== Hover/Focus Effects ===== */
+.trust-item:hover {
+  border-color: var(--trust-primary);
+  background: linear-gradient(135deg, var(--trust-primary)15, var(--trust-secondary)08);
+}
+
+/* ===== Reduced Motion Support ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .trust-icon-emoji {
+    animation: none;
+  }
+}
+
+/* ===== Responsive Breakpoints ===== */
+@media (max-width: 768px) {
+  .trust-section {
+    padding: 32px 16px;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .trust-item {
+    padding: 16px 12px;
+    gap: 10px;
+  }
+  
+  .trust-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+  
+  .trust-label {
+    font-size: 0.9rem;
+  }
+  
+  .trust-description {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .trust-title {
+    font-size: 1.4rem;
+  }
+  
+  .trust-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ===== Light Mode Adaptation (Optional) ===== */
+@media (prefers-color-scheme: light) {
+  :root {
+    --trust-bg: rgba(248, 250, 252, 0.8);
+    --trust-border: rgba(124, 58, 237, 0.3);
+    --trust-text: #0f172a;
+    --trust-text-muted: #475569;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .trust-section {
+    padding: 20px 0;
+  }
+  
+  .trust-item {
+    break-inside: avoid;
+    border: 1px solid #ccc !important;
+    background: white !important;
+    box-shadow: none !important;
+  }
+  
+  .trust-glow,
+  .trust-icon-emoji {
+    display: none;
+  }
+}

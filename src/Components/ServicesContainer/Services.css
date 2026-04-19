@@ -1,84 +1,458 @@
+/* ===== CSS Variables for Theming ===== */
+:root {
+  --services-primary: #7c3aed;
+  --services-secondary: #38f5d0;
+  --services-bg: rgba(15, 23, 42, 0.6);
+  --services-border: rgba(124, 58, 237, 0.25);
+  --services-text: #e2e8f0;
+  --services-text-muted: #94a3b8;
+  --services-price: #38f5d0;
+  --services-radius: 20px;
+  --services-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --services-transition: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ===== Section Layout ===== */
 .services-section {
   padding: 80px 20px;
-  text-align: center;
   background: transparent;
-}
-.services-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #e5e7eb;
-  margin-bottom: 50px;
-}
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.service-card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
-  padding: 28px 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  transition: 0.3s ease;
   position: relative;
 }
-.service-card:hover {
-  box-shadow: 0 0 26px rgba(56, 245, 208, 0.35);
+
+.services-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 56px;
 }
-.service-card h2 {
-  color: #f9fafb;
-  font-size: 1.4rem;
-  margin-bottom: 8px;
+
+.services-title {
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--services-text);
+  margin: 0 0 12px;
+  line-height: 1.3;
 }
+
+.services-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: var(--services-text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ===== Grid Layout ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+/* ===== Service Card ===== */
+.service-card {
+  position: relative;
+  padding: 28px 24px;
+  border-radius: var(--services-radius);
+  border: 1px solid var(--services-border);
+  background: var(--services-bg);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: default;
+  transition: 
+    border-color 0.3s var(--services-transition),
+    background 0.3s var(--services-transition);
+  overflow: hidden;
+  will-change: transform;
+}
+
+.service-card:focus-visible {
+  outline: 2px solid var(--services-primary);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.25);
+}
+
+.service-card:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Popular Card Highlight */
+.service-card--popular {
+  border-color: var(--services-primary);
+  background: linear-gradient(135deg, var(--services-primary)12, var(--services-secondary)08);
+  box-shadow: 0 12px 48px rgba(124, 58, 237, 0.25);
+}
+
+.service-card--popular::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--services-primary), var(--services-secondary));
+}
+
+/* Popular Badge */
+.popular-badge {
+  position: absolute;
+  top: 12px;
+  right: -31px;
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: white;
+  padding: 15px 20px;
+  font-size: 0.5rem;
+  font-weight: 800;
+  transform: rotate(45deg);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+/* ===== Card Header ===== */
+.service-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.service-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--services-text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.service-subtitle {
+  font-size: 0.9rem;
+  color: var(--services-text-muted);
+  font-weight: 500;
+}
+
+/* ===== Price Section ===== */
+.service-price-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .service-price {
-  color: #38f5d0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--services-price);
 }
+
+.service-bonus {
+  font-size: 0.85rem;
+  color: var(--services-secondary);
+  font-weight: 500;
+}
+
+/* ===== Description ===== */
 .service-desc {
-  color: #cbd5e1;
   font-size: 0.95rem;
-  margin-bottom: 18px;
+  color: var(--services-text-muted);
+  line-height: 1.5;
+  margin: 4px 0;
 }
+
+/* ===== Features List ===== */
 .service-points {
   list-style: none;
   padding: 0;
-  margin-bottom: 22px;
-}
-.service-points li {
-  color: #e5e7eb;
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-  position: relative;
-  padding-left: 16px;
-}
-.service-points li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #38f5d0;
-  font-size: 0.9rem;
-}
-.hire-btn {
-  padding: 10px 22px;
-  border-radius: 22px;
-  border: none;
-  background: linear-gradient(135deg, #38f5d0, #6366f1);
-  color: #0f172a;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.hire-btn:hover {
-  color: #fff;
+.service-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--services-text);
+  line-height: 1.4;
 }
+
+.point-check {
+  color: var(--services-secondary);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.point-text {
+  flex: 1;
+}
+
+/* ===== Tech Stack Badges ===== */
+.service-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tech-badge {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.15);
+  color: var(--services-primary);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+/* ===== Niche Tags ===== */
+.service-niche {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--services-text-muted);
+  flex-wrap: wrap;
+}
+
+.niche-label {
+  font-weight: 600;
+  color: var(--services-text);
+}
+
+.niche-tags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.niche-tag {
+  padding: 2px 8px;
+  background: rgba(56, 245, 208, 0.1);
+  border-radius: 6px;
+  color: var(--services-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ===== CTA Button ===== */
+.service-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 14px;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--services-primary), var(--services-secondary));
+  color: #0f172a;
+  border: none;
+  cursor: pointer;
+  transition: 
+    transform 0.25s var(--services-transition),
+    box-shadow 0.25s ease,
+    opacity 0.2s ease;
+  margin-top: 8px;
+  will-change: transform;
+}
+
+.service-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(56, 245, 208, 0.4);
+}
+
+.service-cta:active {
+  transform: translateY(0);
+}
+
+.service-cta--popular {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+}
+
+.service-cta--popular:hover {
+  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+}
+
+.cta-icon {
+  font-size: 1.1rem;
+}
+
+/* ===== Glow Effect ===== */
+.service-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.service-card:hover .service-glow,
+.service-card:focus-visible .service-glow {
+  opacity: 1;
+}
+
+/* ===== Bottom CTA Section ===== */
+.services-bottom-cta {
+  text-align: center;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--services-border);
+}
+
+.bottom-cta-text {
+  font-size: 1.05rem;
+  color: var(--services-text-muted);
+  margin: 0 0 16px;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+  transition: 
+    transform 0.25s var(--services-transition),
+    box-shadow 0.25s ease;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(37, 211, 102, 0.6);
+}
+
+/* ===== Reduced Motion Support ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .service-card {
+    will-change: auto;
+  }
+}
+
+/* ===== Responsive Breakpoints ===== */
+@media (max-width: 1024px) {
+  .services-section {
+    padding: 64px 16px;
+  }
+  
+  .services-grid {
+    gap: 20px;
+  }
+  
+  .service-card {
+    padding: 24px 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .services-title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+  }
+  
+  .services-subtitle {
+    font-size: 1rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+  
+  .service-card {
+    padding: 24px 20px;
+  }
+  
+  .service-title {
+    font-size: 1.2rem;
+  }
+  
+  .service-price {
+    font-size: 1.3rem;
+  }
+  
+  .popular-badge {
+    font-size: 0.7rem;
+    padding: 4px 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-section {
+    padding: 48px 12px;
+  }
+  
+  .service-card {
+    padding: 20px 16px;
+  }
+  
+  .service-cta,
+  .btn-whatsapp {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .service-tech,
+  .service-niche {
+    justify-content: center;
+  }
+}
+
+/* ===== Light Mode Adaptation (Optional) ===== */
+@media (prefers-color-scheme: light) {
+  :root {
+    --services-bg: rgba(248, 250, 252, 0.9);
+    --services-border: rgba(124, 58, 237, 0.35);
+    --services-text: #0f172a;
+    --services-text-muted: #475569;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .services-section {
+    padding: 20px 0;
+  }
+  
+  .service-card {
+    break-inside: avoid;
+    border: 1px solid #ccc !important;
+    background: white !important;
+    box-shadow: none !important;
+  }
+  
+  .service-glow,
+  .popular-badge,
+  .btn-whatsapp {
+    display: none;
+  }
+  
+  .service-cta {
+    background: #eee !important;
+    color: #000 !important;
+    border: 1px solid #999;
   }
 }

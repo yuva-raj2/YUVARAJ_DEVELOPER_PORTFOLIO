@@ -1,12 +1,54 @@
+/* ========== 🔥 PARTICLE CANVAS ========== */
 #particle-canvas {
   position: fixed;
   inset: 0;
+
   width: 100vw;
   height: 100vh;
 
   pointer-events: none;
-  z-index: -10;
 
-  /* Smoother blending */
+  /* ✅ Use safe layering instead of negative z-index */
+  z-index: 0;
+
+  /* Ensure it stays behind content */
+  isolation: isolate;
+
+  /* ✨ Blend nicely with dark UI */
   mix-blend-mode: screen;
+
+  /* 🚀 Performance optimizations */
+  will-change: transform;
+  contain: strict;
+
+  /* Prevent touch delays */
+  touch-action: none;
+}
+
+/* Ensure main content sits above */
+.app,
+body > *:not(#particle-canvas) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== 🔥 REDUCED MOTION ========== */
+@media (prefers-reduced-motion: reduce) {
+  #particle-canvas {
+    display: none;
+  }
+}
+
+/* ========== 📱 MOBILE OPTIMIZATION ========== */
+@media (max-width: 768px) {
+  #particle-canvas {
+    opacity: 0.6; /* Reduce visual noise */
+  }
+}
+
+/* ========== 🛟 FALLBACK (NO BLEND SUPPORT) ========== */
+@supports not (mix-blend-mode: screen) {
+  #particle-canvas {
+    opacity: 0.3;
+  }
 }
