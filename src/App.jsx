@@ -4,8 +4,7 @@ import NeonCursor from './Components/Neon/NeonCursor.jsx';
 import ParticleBackground from './Components/ParticleBackgrounds/ParticleBackground.jsx';
 import TopContainer from './Components/TopContainer/TopContainer.jsx';
 import ScrollToTop from './Components/ScrollToTopContainer/ScrollToTop.jsx';
-import FloatingWhatsApp from './Components/FloatingWhatsApp/FloatingWhatsApp.jsx'; // ✅ NEW
-
+import FloatingWhatsApp from './Components/FloatingWhatsApp/FloatingWhatsApp.jsx';
 function App() {
   return (
     <div className="app">
