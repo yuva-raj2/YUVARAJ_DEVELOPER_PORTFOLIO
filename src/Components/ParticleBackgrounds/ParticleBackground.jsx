@@ -218,9 +218,13 @@ function ParticleBackground({
 
     /* ---------- Cleanup ---------- */
     return () => {
-      if (animationRef.current) {
+     document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
         cancelAnimationFrame(animationRef.current);
-      }
+    } else {
+        animate();
+    }
+});
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("touchmove", handleTouchMove);

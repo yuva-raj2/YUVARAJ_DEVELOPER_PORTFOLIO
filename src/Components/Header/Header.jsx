@@ -6,7 +6,7 @@ import "./Header.css";
  * Header - Professional Portfolio Navigation (Optimized)
  * 
  * @param {Object} props
- * @param {string} [props.brandName="Yuvitra Labs"] - Brand name
+ * @param {string} [props.brandName="Yuvaraj"] - Brand name
  * @param {string} [props.logoHref="Home"] - Logo destination section ID (without #)
  * @param {Array<string>} [props.sections] - Navigation sections
  * @param {string} [props.primaryColor="#38f5d0"] - Brand primary color
@@ -20,10 +20,10 @@ import "./Header.css";
  * @param {string} [props.className] - Additional CSS classes
  */
 const Header = memo(function Header({
-  brandName = "Yuvitra Labs",
+  brandName = "Yuvaraj",
   logoHref = "Home",
   sections: propSections,
-  primaryColor = "#38f5d0",
+  primaryColor = "#38F5D0",
   secondaryColor = "#22d3ee",
   audioUrl = "https://cdn.pixabay.com/download/audio/2022/03/15/audio_7e046feee4.mp3?filename=click-124467.mp3",
   audioVolume = 0.4,
@@ -44,7 +44,7 @@ const Header = memo(function Header({
 
   // Default sections
   const sections = useMemo(() => 
-    propSections || ["Home", "About", "Projects", "Skills", "Experience", "Services", "Contact"],
+    propSections || ["Home", "About", "Projects", "Skills", "Experience", "Tech Stack","Achievments", "Contact"],
     [propSections]
   );
 
@@ -300,7 +300,7 @@ const Header = memo(function Header({
             {...getMagneticProps()}
           >
             <span className="cta-icon" aria-hidden="true">💬</span>
-            <span className="cta-text">Free Quote</span>
+            <span className="cta-text">Download CV</span>
           </a>
         )}
 
@@ -378,7 +378,7 @@ const Header = memo(function Header({
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <span className="whatsapp-icon" aria-hidden="true">💬</span>
-                <span>Get Free Quote on WhatsApp</span>
+                <span>Download CV</span>
               </a>
             )}
           </motion.nav>

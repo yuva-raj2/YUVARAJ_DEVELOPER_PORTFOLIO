@@ -6,10 +6,7 @@ import Projects from "./Projects";
 import "./ProjectContainer.css";
 import ShiftAllocationImage from "../../assets/shift-allocation.png";
 import MultiLangSupport from  "../../assets/multi-lang.png";
-/**
- * ProjectContainer - Conversion-Optimized Portfolio Showcase
- * For Construction & Photography Business Clients
- */
+import RightClickPhotography from "../../assets/Right-Click-Photography-studio.png";
 function ProjectContainer({
   projects: propProjects,
   sectionTitle = "Recent Projects",
@@ -26,7 +23,7 @@ function ProjectContainer({
 
   // ✅ Niche-focused project data (Problem → Solution → Result format)
   const defaultProjects = useMemo(() => [
-    {
+       {
       id: "shift-allocation",
       title: "Shift Allocation System",
       subtitle: "",
@@ -41,6 +38,22 @@ function ProjectContainer({
       caseStudy: true,
       featured: true, // ✅ Highlight for target niche
       whatsappMessage: "Hi Yuvaraj, I saw your Shift Allocation project. Can you build something similar for my construction business?"
+    },
+    {
+      id: "photography-portfolio",
+      title: "Right Click Photography Studio Website",
+      subtitle: "",
+      img: RightClickPhotography,
+      desc: "Built a modern portfolio website that showcases services, galleries, pricing, and contact options—improving brand credibility, customer engagement, and lead generation",
+      problem: "🔍 Problem: Limited online presence made it difficult for the photography studio to attract new clients, showcase work professionally, and manage customer inquiries efficiently.",
+      solution: "🛠️ Solution:Built a modern React-based portfolio website with responsive gallery sections, service packages, pricing displays, testimonials, and direct contact integration for seamless client engagement.",
+      result: "📈 Result: Improved brand credibility, stronger customer engagement, increased inquiries, and a professional digital presence accessible across all devices.",
+      tech: ["React", "Tailwind CSS", "Three.js", "WhatsApp API"],
+      niche: "photography",
+      link: "#",
+      caseStudy: true,
+      featured: true, // ✅ Highlight for target niche
+      whatsappMessage: "Hi Yuvaraj, I saw your Right Click Photography Studio project. Can you build something similar for my photography/business website with portfolio gallery, service details, pricing, and contact inquiry features?"
     },
     {
       id: "translation-integration",

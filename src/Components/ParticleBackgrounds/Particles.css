@@ -19,7 +19,7 @@
 
   /* 🚀 Performance optimizations */
   will-change: transform;
-  contain: strict;
+  contain: layout paint;
 
   /* Prevent touch delays */
   touch-action: none;

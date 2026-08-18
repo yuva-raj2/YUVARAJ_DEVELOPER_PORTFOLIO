@@ -280,16 +280,7 @@ function Services({
                 )}
 
                 {/* Niche Tags */}
-                {service.niche?.length > 0 && (
-                  <div className="service-niche" aria-label="Best for">
-                    <span className="niche-label">Best for:</span>
-                    <span className="niche-tags">
-                      {service.niche.map((tag, idx) => (
-                        <span key={idx} className="niche-tag">{tag}</span>
-                      ))}
-                    </span>
-                  </div>
-                )}
+             
 
                 {/* CTA Button */}
                 <a
