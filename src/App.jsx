@@ -9,10 +9,11 @@ import Projects from "./Components/Projects";
 import YuvitraLabs from "./Components/YuvitraLabs";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
-
+import SEO from "./Components/SEO";
 export default function App() {
   return (
     <div className="app">
+      <SEO/>
       <Navbar />
 
       <main>

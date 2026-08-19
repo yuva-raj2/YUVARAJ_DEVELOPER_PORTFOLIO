@@ -1,4 +1,9 @@
-User-agent: *
-Allow: /
+<?xml version="1.0" encoding="UTF-8"?>
 
-Sitemap: https://yuvaraj-dev-portfolio.netlify.app/sitemap.xml
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+  <url>
+    <loc>https://yuvaraj-developer-portfolio.vercel.app/</loc>
+  </url>
+</urlset>

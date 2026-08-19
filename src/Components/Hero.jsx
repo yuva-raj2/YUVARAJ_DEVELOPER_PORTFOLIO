@@ -1,8 +1,7 @@
 // src/components/Hero.jsx
 
 import { motion } from "framer-motion";
-import HeroScene from "./three/HeroScene";
-import { portfolioData } from "../Components/data/portfolioData";
+import { portfolioData } from "./data/portfolioData";
 
 export default function Hero() {
   const {

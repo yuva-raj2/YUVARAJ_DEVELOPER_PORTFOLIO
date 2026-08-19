@@ -93,7 +93,6 @@ export default function Contact() {
       "noopener,noreferrer"
     );
   };
-
   const openGitHub = () => {
     window.open(
       "https://github.com/yuva-raj2",
@@ -149,7 +148,7 @@ export default function Contact() {
             <div className="contact-links">
               <a
                 href="mailto:yuvaarun09964@gmail.com"
-                className="contact-link"
+                className="contact-link" 
               >
                 <span className="contact-link-icon">✉</span>
 
