@@ -87,7 +87,6 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.15 }}
         >
-          <HeroScene />
 
           <div className="hero-orbit-card">
             <strong>{name}</strong>
