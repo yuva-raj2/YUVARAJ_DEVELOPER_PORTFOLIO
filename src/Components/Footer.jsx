@@ -34,7 +34,7 @@ export default function Footer() {
               <h3>Yuvaraj R</h3>
 
               <p>
-                Full Stack Developer · Technical Trainer · Founder
+                Full Stack Developer · Technical Trainer
               </p>
             </div>
           </div>

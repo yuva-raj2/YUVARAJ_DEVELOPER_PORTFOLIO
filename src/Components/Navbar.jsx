@@ -6,7 +6,6 @@ const navItems = [
   { label: "Experience", target: "experience" },
   { label: "Skills", target: "skills" },
   { label: "Work", target: "work" },
-  { label: "Yuvitra Labs", target: "labs" },
   { label: "Contact", target: "contact" },
 ];
 

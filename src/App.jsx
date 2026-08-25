@@ -10,6 +10,7 @@ import YuvitraLabs from "./Components/YuvitraLabs";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import SEO from "./Components/SEO";
+import IndependentWork from "./Components/IndependentWork";
 export default function App() {
   return (
     <div className="app">
@@ -22,6 +23,7 @@ export default function App() {
         <Experience />
         <Skills />
         <Projects />
+        <IndependentWork/>
         <YuvitraLabs />
         <Contact />
       </main>

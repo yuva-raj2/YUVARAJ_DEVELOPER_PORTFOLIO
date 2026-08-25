@@ -5,17 +5,16 @@ export const portfolioData = {
 
   roles: [
     "Full Stack Developer",
-    "Technical Trainer",
-    "Founder"
+    "Technical Trainer"
   ],
 
   hero: {
-    eyebrow: "BUILDING SOFTWARE • TEACHING DEVELOPERS • EXPLORING PRODUCTS",
+      eyebrow: "JAVA • SPRING BOOT • REACT • SOFTWARE DEVELOPMENT",
     title: "I build practical software that solves real problems.",
     description:
-      "Java, Spring Boot, React and modern web technologies — with a focus on building useful products, thoughtful user experiences and reliable systems.",
+       "Java, Spring Boot, React and modern web technologies, with a focus on building reliable applications and solving practical software problems.",
     primaryCta: "View My Work",
-    secondaryCta: "Explore Yuvitra Labs"
+    secondaryCta: "See Independent Work"
   },
 
   about: {
@@ -31,7 +30,7 @@ export const portfolioData = {
   {
     role: "Technical Trainer",
     company: "Rathinam Global University",
-    period: "2026 – Present",
+    period: "Aug 2026 – Present",
     type: "Current",
     description:
       "Teaching programming and software development concepts, mentoring students through practical development activities, and helping learners build stronger foundations in computer science and application development."
@@ -39,7 +38,7 @@ export const portfolioData = {
   {
     role: "Associate Software Engineer",
     company: "Maxbyte Technologies",
-    period: "2026",
+    period: "Sep 2025 - Jul 2026",
     type: "Professional Experience",
     description:
       "Worked on industrial software solutions involving full-stack development, application workflows, APIs, UI improvements and enterprise application logic."
